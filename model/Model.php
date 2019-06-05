@@ -33,17 +33,16 @@ abstract class Model implements IModel
         $arrayValues = [];
         foreach ($this as $key => $value) {
             if ($key !== 'id' && $key !== 'db') {
-                $keyString .= sprintf("`%s`, ",$key);
-                $valueString .= sprintf("`:%s`, ",$key);
+                $keyString .= sprintf("%s,",$key);
+                $valueString .= sprintf(":%s,",$key);
                 $arrayValues[$key] = $value;
             }
         }
-        $keyString = substr($keyString, 0, -2);
-        $valueString = substr($valueString, 0, -2);
-        $sql = "INSERT INTO `{$tableName}`({$keyString}) VALUES ({$valueString})";
+        $keyString = substr($keyString, 0, -1);
+        $valueString = substr($valueString, 0, -1);
+        $sql = "INSERT INTO {$tableName}({$keyString}) VALUES ({$valueString})";
  
-        return $this->db->execute($sql, $arrayValues);
- 
+        $this->db->execute($sql, $arrayValues);
      }
  
      public function update() {
