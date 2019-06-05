@@ -28,14 +28,21 @@ abstract class Model implements IModel
 
     public function insert() {
         $tableName = $this->getTableName();
+        $keyString = '';
+        $valueString = '';
+        $arrayValues = [];
         foreach ($this as $key => $value) {
-            print "$key => $value<br>";
+            if ($key !== 'id' && $key !== 'db') {
+                $keyString .= sprintf("`%s`, ",$key);
+                $valueString .= sprintf("`:%s`, ",$key);
+                $arrayValues[$key] = $value;
+            }
         }
+        $keyString = substr($keyString, 0, -2);
+        $valueString = substr($valueString, 0, -2);
+        $sql = "INSERT INTO `{$tableName}`({$keyString}) VALUES ({$valueString})";
  
-        //$sql = "INSERT INTO `products`(`name`, `description`, `price`) VALUES (:name, :description, :price)";
- 
-         //execute
-         //$this->id = "lastID";
+        return $this->db->execute($sql, $arrayValues);
  
      }
  
