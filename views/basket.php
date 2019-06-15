@@ -6,7 +6,7 @@
                 <th class="bodyBasket__img"><img class="bigImgProdBasket" src="<?=$smallImgPath . $product['src']?>" alt="<?=$product['name']?>"></th>
                 <th class="bodyBasket__title"><?=$product['name']?></th>
                 <th class="bodyBasket__price">&#36;<?=$product['price']?>.00</th>
-                <th class="bodyBasket__quantity"><?=$quantity?></th>
+                <!--<th class="bodyBasket__quantity"><?=$quantity?></th>-->
                 <th>
                     <button class="delProdBasket" data-id="<?=$product['id_basket']?>">X</button>
                 </th>

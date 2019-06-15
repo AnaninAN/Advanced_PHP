@@ -7,12 +7,15 @@ require "../engine/Autoload.php";
 use app\engine\Render;
 use app\engine\TwigRender;
 use app\engine\Autoload;
+use app\engine\Request;
 
 spl_autoload_register([new Autoload(), 'loadClass']);
 require_once '../vendor/autoload.php';
 
-$controllerName = $_GET['c'] ?: 'product';
-$actionName = $_GET['a'];
+$request = new Request();
+
+$controllerName = $request->getControllerName() ?: 'product';
+$actionName = $request->getActionName();
 
 $controllerClass = CONTROLLER_NAMESPACE . ucfirst($controllerName) . "Controller";
 

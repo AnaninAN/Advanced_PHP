@@ -1,12 +1,12 @@
 <div class="catalog">
     <div class="row productsList">
         <?php foreach ($products as $product) : ?>
-            <div class="fetured__poster" onclick="window.location = '/?c=product&a=card&id=<?=$product['id']?>'">
+            <div class="fetured__poster" onclick="window.location = '/product/card/?id=<?=$product['id']?>'">
                 <div class="poster__header" >
                     <img src="<?=$smallImgPath . $product['src']?>" alt="<?=$product['name']?>">
                     <div class="poster__header__botton">
                         <button data-id="<?=$product['id']?>" class="action" onclick="event.stopPropagation()">
-                            <img src="./img/basket.png" alt="Basket">
+                            <img src="../../img/basket.png" alt="Basket">
                             Add to&nbsp;Basket
                         </button>
                     </div>
@@ -20,7 +20,7 @@
             </div>
         <?php endforeach ?>
     </div>
-    <a class="btn btn-primary" href="?c=product&a=catalog&page=<?=$page?>">Показать ещё ...</a>
+    <a class="btn btn-primary" href="/product/catalog/?page=<?=$page?>">Показать ещё ...</a>
 </div>
 
 <script>
@@ -28,7 +28,7 @@
         $(".action").on('click', function(){
             let id = $(this).attr('data-id');
             $.ajax({
-                url: "?c=basket&a=addbasket",
+                url: "/basket/AddBasket/",
                 type: "POST",
                 dataType : "json",
                 data:{

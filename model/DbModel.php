@@ -12,6 +12,12 @@ abstract class DbModel extends Models
         return Db::getInstance()->queryOne($sql, ["$field" => $value])['count'];
     }
 
+    public static function getOneWhere($field, $value) {
+        $tableName = static::getTableName();
+        $sql = "SELECT * FROM {$tableName} WHERE `$field`=:$field";
+        return Db::getInstance()->queryObject($sql, ["$field"=>$value], static::class);
+    }
+
     public static function getOne($id) {
         $tableName = static::getTableName();
         $sql = "SELECT * FROM {$tableName} WHERE id = :id";

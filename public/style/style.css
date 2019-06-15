@@ -134,6 +134,8 @@ a:hover {
   height: 40px;
   border: 1px solid white;
   text-align: center;
+  background: transparent;
+  outline: none;
 }
 
 .poster__header__botton .action:hover {
@@ -265,4 +267,9 @@ a:hover {
 }
 .grandTotal span {
   color: #ef5b72;
+}
+
+.userName {
+  text-transform: uppercase;
+  font-weight: 900;
 }
