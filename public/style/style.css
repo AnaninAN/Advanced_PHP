@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body,
+a {
+  font-family: 'Lato', sans-serif;
+  color: #222;
+}
+
+h3 {
+  text-align: center;
+}
+
+a:hover {
+  color: #222;
+  text-decoration: none;
+}
+
+.header {
+  padding: 25px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 27px;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+.logo .logo__img {
+  margin-right: 12px;
+}
+
+.logo span {
+  color: #f16d7f;
+  font-weight: 900;
+}
+
+.basket {
+  float: right;
+}
+
+.basket .basket__btn {
+  width: 160px;
+  height: 38px;
+}
+
+.basket .basket__btn .basket__ico {
+  float: left;
+  position: relative;
+}
+
+.basket .basket__btn .basket__ico .basket__img {
+  margin-right: 50px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+}
+
+.basket .basket__btn .basket__ico .countProducts {
+  position: absolute;
+  left: 31px;
+  top: 4px;
+}
+
+.catalog {
+  text-align: center;
+}
+
+.productsList {
+  display: flex;
+  justify-content: space-around;
+}
+
+.shop,
+.productsList {
+  margin-top: 20px;
+}
+
+.shop h3,
+.productsList h3 {
+  margin: 0 auto;
+}
+
+.fetured__poster {
+  display: block;
+  margin-bottom: 30px;
+  position: relative;
+  width: 263px;
+  height: 364px;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.fetured__poster:hover {
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.16);
+}
+
+.fetured__poster:hover .poster__header__botton {
+  display: flex;
+}
+
+.poster__header > img {
+  display: block;
+  width: 263px;
+  height: 280px;
+}
+
+.poster__header__botton {
+  display: none;
+  justify-content: center;
+  width: 263px;
+  height: 281px;
+  position: absolute;
+  background: rgba(58, 56, 56, 0.83);
+  z-index: 500;
+  top: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+}
+
+.poster__header__botton .action {
+  text-decoration: none;
+  display: flex;
+  position: absolute;
+  top: 120px;
+  align-items: center;
+  color: white;
+  width: 140px;
+  padding: 0 11px;
+  height: 40px;
+  border: 1px solid white;
+  text-align: center;
+  background: transparent;
+  outline: none;
+}
+
+.poster__header__botton .action:hover {
+  background: #ef5b72;
+}
+
+.poster__header__botton .action:active {
+  color: black;
+  border: 1px solid black;
+}
+
+.poster__header__botton .action:active img {
+  filter: grayscale(100%);
+}
+
+.poster__header__botton .action img {
+  width: 23px;
+  margin-right: 8px;
+  filter: brightness(0) invert(1);
+}
+
+.poster__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 14px 0 14px;
+  text-align: left;
+}
+
+.poster__footer__title {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 10px;
+}
+
+.poster__footer__price {
+  color: #f16d7f;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 12px;
+  margin-top: 17px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+}
+
+.card img {
+  width: 400px;
+}
+
+.card .card__text {
+  width: 340px;
+}
+
+.card .card__text h1 {
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.basket {
+  width: 100%;
+}
+
+.basket h3 {
+  text-align: center;
+}
+
+.basketProduct {
+  width: 100%;
+}
+
+.bodyBasket {
+  height: 70px;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+.smallImgProdBasket {
+  height: 60px;
+}
+.bigImgProdBasket {
+  height: 150px;
+}
+
+.bodyBasket__title {
+  text-transform: uppercase;
+}
+
+.bodyBasket__price,
+.bodyBasket__quantity {
+  text-align: center;
+}
+.bodyBasket__del {
+  text-align: right;
+  cursor: pointer;
+}
+.delProdBasket {
+  background: transparent;
+  outline: none;
+  border: none;
+  font-weight: 900;
+}
+.delProdBasket:focus {
+  outline: none;
+}
+.bodyBasket__price,
+.bodyBasket__del a,
+.delProdBasket {
+  color: #ef5b72;
+}
+.bodyBasket__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.bodyBasket__footer .totalBasket {
+  font-size: 25px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.bodyBasket__footer .totalBasket span {
+  color: #ef5b72;
+}
+.grandTotal {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 900;
+  text-transform: uppercase;
+  float: right;
+  background-color: #eee;
+  width: 400px;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+}
+.grandTotal span {
+  color: #ef5b72;
+}
+
+.userName {
+  text-transform: uppercase;
+  font-weight: 900;
+}
