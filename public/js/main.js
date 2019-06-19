@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $(".action").on('click', function(){
+    $(".action").on('click', function() {
         let id = $(this).attr('data-id');
         $.ajax({
             url: "/basket/AddBasket/",
@@ -20,7 +20,7 @@ $(document).ready(function(){
         })
     });
 
-    $(".delProdBasket").on('click', function(){
+    $(".delProdBasket").on('click', function() {
         let id = $(this).attr('data-id');
         $.ajax({
             url: "/basket/delete/",

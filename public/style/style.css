@@ -262,6 +262,11 @@ a:hover {
 .bodyBasket__footer .totalBasket span {
   color: #ef5b72;
 }
+.btnBasket {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
 .grandTotal {
   margin-top: 20px;
   font-size: 25px;

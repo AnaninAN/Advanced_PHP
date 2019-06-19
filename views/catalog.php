@@ -20,5 +20,7 @@
             </div>
         <?php endforeach ?>
     </div>
-    <a class="btn btn-primary" href="/product/catalog/?page=<?=$page?>">Показать ещё ...</a>
+    <?if ($showmore):?>
+        <a class="btn btn-primary" href="/product/catalog/?page=<?=$page?>">Показать ещё ...</a>
+    <?endif;?>
 </div>

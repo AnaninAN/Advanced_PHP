@@ -29,7 +29,7 @@ abstract class Controller
         if (method_exists($this, $method))
             $this->$method();
         else
-            echo "404";
+           throw new \Exception("Action not found", 404);
     }
 
     public function render($template, $params = []) {

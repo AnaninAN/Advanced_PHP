@@ -11,9 +11,11 @@ class ProductController extends Controller
         $page = (new Request())->getParams()['page'] ?: 0;
         $page++;
         $limit = $page * QUANTITY_CARD_CATALOG;
+        $showmore = (new ProductRepository())->getCount();
         $products = (new ProductRepository())->getLimit(0, $limit);
         echo $this->render(
             'catalog', [
+                'showmore' => ($showmore > $limit) ? true : false,
                 'products' => $products,
                 'page' => $page,
                 'smallImgPath' => SMALL_IMG

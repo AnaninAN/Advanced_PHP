@@ -14,7 +14,7 @@ class Render implements IRenderer
             include $fileName;
         }
         else
-            echo "404";
+            throw new \Exception("Template not found");
         return ob_get_clean();
     }
 }

@@ -13,6 +13,12 @@ abstract class Repository
         $this->db = Db::getInstance();
     }
 
+    public function getCount() {
+        $tableName = $this->getTableName();
+        $sql = "SELECT count(*) as count FROM {$tableName}";
+        return $this->db->queryOne($sql)['count'];
+    }
+
     public function getCountWhere($field, $value) {
         $tableName = $this->getTableName();
         $sql = "SELECT count(*) as count FROM {$tableName} WHERE `$field` = :$field";
@@ -21,7 +27,7 @@ abstract class Repository
 
     public function getOneWhere($field, $value) {
         $tableName = $this->getTableName();
-        $sql = "SELECT * FROM {$tableName} WHERE `$field`=:$field";
+        $sql = "SELECT * FROM {$tableName} WHERE `$field` = :$field";
         return $this->db->queryObject($sql, ["$field"=>$value], $this->getEntityClass());
     }
 
