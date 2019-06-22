@@ -1,1 +1,2 @@
 # Advanced_PHP
+Заглушка
